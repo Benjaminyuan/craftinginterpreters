@@ -1,0 +1,18 @@
+pub enum TOKEN {
+    LR,
+    RR,
+    LeftParen,
+    RightParen,
+    LeftBrace,
+    RIGHT_BRACE,
+    NOT,
+    NOT_EQUAL,
+    COMMA,
+    DOT,
+    MINUS,
+    PLUS,
+    SEMICOLON,
+    STAR,
+    EQUAL_EQUAL,
+    EQUAL,
+}
