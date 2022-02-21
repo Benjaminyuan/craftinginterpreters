@@ -1,0 +1,788 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-apple-darwin11.3.0
+ 
+make: *** No rule to make target `all'.  Stop.
+ 
+
+# Make data base, printed on Mon Feb 21 12:23:58 2022
+
+# Variables
+
+# environment
+DART_PATH = /usr/local/opt/dart/libexec
+# automatic
+ 
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+CPPFLAGS = -I/usr/local/opt/openjdk@11/include
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /Users/yuanjiewei/project/craftinginterpreters
+# makefile
+SHELL = /bin/sh
+# environment
+VSCODE_NLS_CONFIG = {"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"5b383b9d184f7cbe3cfd7572cd7df52b.zh-cn","_translationsConfigFile":"/Users/yuanjiewei/Library/Application Support/Code/clp/5b383b9d184f7cbe3cfd7572cd7df52b.zh-cn/tcf.json","_cacheRoot":"/Users/yuanjiewei/Library/Application Support/Code/clp/5b383b9d184f7cbe3cfd7572cd7df52b.zh-cn","_resolvedLanguagePackCoreLocation":"/Users/yuanjiewei/Library/Application Support/Code/clp/5b383b9d184f7cbe3cfd7572cd7df52b.zh-cn/f80445acd5a3dadef24aa209168452a3d97cc326","_corruptedFile":"/Users/yuanjiewei/Library/Application Support/Code/clp/5b383b9d184f7cbe3cfd7572cd7df52b.zh-cn/corrupted.info","_languagePackSupport":true}
+# environment
+_ = /usr/bin/make
+# makefile (from `Makefile', line 4)
+TEST_SNAPSHOT := build/test.dart.snapshot
+# environment
+STARSHIP_SESSION_KEY = 2142313509129982
+# environment
+AUTOJUMP_SOURCED = 1
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+__CFBundleIdentifier = com.microsoft.VSCode
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/l_/vl1b4klj0pvcpc924tgc0tpr0000gn/T/vscode-ipc-4a82a510-e53b-4f23-a7d4-86dc21b98430.sock
+# environment
+VSCODE_CWD = /Users/yuanjiewei/project/craftinginterpreters
+# environment
+PATH = /Users/yuanjiewei/.autojump/bin:/usr/local/opt/openjdk@11/bin:/usr/local/opt/python@3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/yuanjiewei/.cargo/bin:/Users/yuanjiewei/go/bin:/usr/local/go/bin:/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/bin:/Users/yuanjiewei/webdriver/bin:/usr/local/opt/dart/libexec/bin
+# environment
+GOROOT = /usr/local/go
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# environment
+OPENSSL_ROOT_DIR = /usr/local/opt/openssl/
+# environment
+SDKMAN_DIR = /Users/yuanjiewei/.sdkman
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# environment
+SDKMAN_CANDIDATES_API = https://api.sdkman.io/2
+# environment
+GOPATH = /Users/yuanjiewei/go
+# environment
+LaunchInstanceID = 73103D16-2F0D-480D-B752-E72AAC8E8FDD
+# environment
+SDKMAN_PLATFORM = darwinx64
+# environment
+VSCODE_LOG_STACK = false
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.ZVdskTj40x/Listeners
+# automatic
+%F = $(notdir $%)
+# makefile (from `Makefile', line 3)
+BUILD_SNAPSHOT := build/build.dart.snapshot
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /Users/yuanjiewei/project/craftinginterpreters
+# environment
+PKG_CONFIG_PATH = /usr/lib/pkgconfig
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
+# environment
+HOME = /Users/yuanjiewei
+# default
+MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
+# environment
+VSCODE_CLI = 1
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/yuanjiewei/Library/Application Support/Code/CachedData/f80445acd5a3dadef24aa209168452a3d97cc326
+# environment
+LOGNAME = yuanjiewei
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+ZSH = /Users/yuanjiewei/.oh-my-zsh
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+XPC_FLAGS = 0x0
+# environment
+SDKMAN_VERSION = 5.13.1
+# environment
+COLORTERM = truecolor
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+LC_TERMINAL = iTerm2
+# environment
+SHLVL = 3
+# environment
+JAVA_HOME = /Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home
+# makefile (from `Makefile', line 1)
+BUILD_DIR := build
+# default
+MAKE_VERSION := 3.81
+# environment
+USER = yuanjiewei
+# makefile
+.DEFAULT_GOAL := default
+# environment
+OPENSSL_INCLUDE_DIR = /usr/local/opt/openssl/include/
+# default
+MAKECMDGOALS := all
+# environment
+TERM_SESSION_ID = w0t0p0:91521867-B4BC-4C6F-BD5A-98D1865FDBBD
+# environment
+LESS = -R
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
+ 
+# environment
+TERM_PROGRAM = iTerm.app
+# default
+.VARIABLES := 
+# environment
+TMPDIR = /var/folders/l_/vl1b4klj0pvcpc924tgc0tpr0000gn/T/
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /Users/yuanjiewei/Library/Application Support/Code/1.64.2-main.sock
+# makefile (from `Makefile', line 83)
+run_generate_ast = @ java -cp build/gen/$(1) com.craftinginterpreters.tool.GenerateAst gen/$(1)/com/craftinginterpreters/lox
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+TERM_PROGRAM_VERSION = 3.4.15
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.154695037.154695046.9E9FE426-471B-4E48-BD57-E71DC33C8081
+# environment
+LC_TERMINAL_VERSION = 3.4.15
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# automatic
++F = $(notdir $+)
+# environment
+ITERM_SESSION_ID = w0t0p0:91521867-B4BC-4C6F-BD5A-98D1865FDBBD
+# environment
+COLORFGBG = 7;0
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F5:0x19:0x34
+# environment
+COMMAND_MODE = unix2003
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+ITERM_PROFILE = Default
+# environment
+SDKMAN_CANDIDATES_DIR = /Users/yuanjiewei/.sdkman/candidates
+# environment
+PULSAR_PATH = /Users/yuanjiewei/project/pulsar
+# environment
+PAGER = less
+# environment
+LC_ALL = C
+# environment
+SECURITYSESSIONID = 186a3
+# environment
+WEBDRIVER = /Users/yuanjiewei/webdriver
+# automatic
+^F = $(notdir $^)
+# makefile (from `Makefile', line 2)
+TOOL_SOURCES := tool/pubspec.lock tool/bin/tile_pages.dart tool/bin/split_chapters.dart tool/bin/build.dart tool/bin/benchmark.dart tool/bin/test.dart tool/bin/compile_snippets.dart tool/bin/build_xml.dart tool/lib/src/split_chapter.dart tool/lib/src/mustache.dart tool/lib/src/source_file_parser.dart tool/lib/src/format.dart tool/lib/src/text.dart tool/lib/src/page.dart tool/lib/src/markdown/inline_syntax.dart tool/lib/src/markdown/xml_renderer.dart tool/lib/src/markdown/markdown.dart tool/lib/src/markdown/block_syntax.dart tool/lib/src/markdown/html_renderer.dart tool/lib/src/markdown/code_syntax.dart tool/lib/src/code_tag.dart tool/lib/src/book.dart tool/lib/src/location.dart tool/lib/src/page_parser.dart tool/lib/src/snippet.dart tool/lib/src/syntax/grammar.dart tool/lib/src/syntax/highlighter.dart tool/lib/src/syntax/rule.dart tool/lib/src/syntax/language.dart tool/lib/src/term.dart
+# default
+SUFFIXES := 
+# default
+.INCLUDE_DIRS = /usr/local/include
+# environment
+MAKELEVEL := 0
+# environment
+AUTOJUMP_ERROR_PATH = /Users/yuanjiewei/Library/autojump/errors.log
+# environment
+LANG = C
+# environment
+TERM = xterm-256color
+# environment
+VSCODE_PID = 578
+# environment
+STARSHIP_SHELL = zsh
+# variable set hash-table stats:
+# Load=104/1024=10%, Rehash=0, Collisions=8/145=6%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 16777220, inode 158911721): 20 files, no impossibilities.
+
+# 20 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+test_c: debug c_chapters build/test.dart.snapshot
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 45):
+	@ dart $(TEST_SNAPSHOT) c
+	
+
+# Not a target:
+tool/lib/src/term.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+java_chapters: split_chapters
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 88):
+	@ $(MAKE) -f util/java.make DIR=gen/chap04_scanning PACKAGE=lox
+	@ $(MAKE) -f util/java.make DIR=gen/chap05_representing PACKAGE=tool
+	$(call run_generate_ast,chap05_representing)
+	@ $(MAKE) -f util/java.make DIR=gen/chap05_representing PACKAGE=lox
+	@ $(MAKE) -f util/java.make DIR=gen/chap06_parsing PACKAGE=tool
+	$(call run_generate_ast,chap06_parsing)
+	@ $(MAKE) -f util/java.make DIR=gen/chap06_parsing PACKAGE=lox
+	@ $(MAKE) -f util/java.make DIR=gen/chap07_evaluating PACKAGE=tool
+	$(call run_generate_ast,chap07_evaluating)
+	@ $(MAKE) -f util/java.make DIR=gen/chap07_evaluating PACKAGE=lox
+	@ $(MAKE) -f util/java.make DIR=gen/chap08_statements PACKAGE=tool
+	$(call run_generate_ast,chap08_statements)
+	@ $(MAKE) -f util/java.make DIR=gen/chap08_statements PACKAGE=lox
+	@ $(MAKE) -f util/java.make DIR=gen/chap09_control PACKAGE=tool
+	$(call run_generate_ast,chap09_control)
+	@ $(MAKE) -f util/java.make DIR=gen/chap09_control PACKAGE=lox
+	@ $(MAKE) -f util/java.make DIR=gen/chap10_functions PACKAGE=tool
+	$(call run_generate_ast,chap10_functions)
+	@ $(MAKE) -f util/java.make DIR=gen/chap10_functions PACKAGE=lox
+	@ $(MAKE) -f util/java.make DIR=gen/chap11_resolving PACKAGE=tool
+	$(call run_generate_ast,chap11_resolving)
+	@ $(MAKE) -f util/java.make DIR=gen/chap11_resolving PACKAGE=lox
+	@ $(MAKE) -f util/java.make DIR=gen/chap12_classes PACKAGE=tool
+	$(call run_generate_ast,chap12_classes)
+	@ $(MAKE) -f util/java.make DIR=gen/chap12_classes PACKAGE=lox
+	@ $(MAKE) -f util/java.make DIR=gen/chap13_inheritance PACKAGE=tool
+	$(call run_generate_ast,chap13_inheritance)
+	@ $(MAKE) -f util/java.make DIR=gen/chap13_inheritance PACKAGE=lox
+	
+
+cpplox:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 71):
+	@ $(MAKE) -f util/c.make NAME=cpplox MODE=debug CPP=true SOURCE_DIR=c
+	
+
+test_jlox: jlox build/test.dart.snapshot
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 41):
+	@ dart $(TEST_SNAPSHOT) jlox
+	
+
+build/build.dart.snapshot: tool/pubspec.lock tool/bin/tile_pages.dart tool/bin/split_chapters.dart tool/bin/build.dart tool/bin/benchmark.dart tool/bin/test.dart tool/bin/compile_snippets.dart tool/bin/build_xml.dart tool/lib/src/split_chapter.dart tool/lib/src/mustache.dart tool/lib/src/source_file_parser.dart tool/lib/src/format.dart tool/lib/src/text.dart tool/lib/src/page.dart tool/lib/src/markdown/inline_syntax.dart tool/lib/src/markdown/xml_renderer.dart tool/lib/src/markdown/markdown.dart tool/lib/src/markdown/block_syntax.dart tool/lib/src/markdown/html_renderer.dart tool/lib/src/markdown/code_syntax.dart tool/lib/src/code_tag.dart tool/lib/src/book.dart tool/lib/src/location.dart tool/lib/src/page_parser.dart tool/lib/src/snippet.dart tool/lib/src/syntax/grammar.dart tool/lib/src/syntax/highlighter.dart tool/lib/src/syntax/rule.dart tool/lib/src/syntax/language.dart tool/lib/src/term.dart
+#  Implicit rule search has not been done.
+ 
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 26):
+	@ mkdir -p build
+	@ echo "Compiling Dart snapshot..."
+	@ dart --snapshot=$@ --snapshot-kind=app-jit tool/bin/build.dart >/dev/null
+	
+
+book: build/build.dart.snapshot
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 19):
+	@ dart $(BUILD_SNAPSHOT)
+	
+
+# Not a target:
+all:
+#  Command-line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+tool/lib/src/markdown/code_syntax.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+tool/lib/src/syntax/language.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.PHONY: book c_chapters clean clox compile_snippets debug default diffs get java_chapters jlox serve split_chapters test test_all test_c test_java
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+tool/pubspec.lock:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+tool/bin/compile_snippets.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+jlox: generate_ast
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 81):
+	@ $(MAKE) -f util/java.make DIR=java PACKAGE=lox
+	
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+generate_ast:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 75):
+	@ $(MAKE) -f util/java.make DIR=java PACKAGE=tool
+	@ java -cp build/java com.craftinginterpreters.tool.GenerateAst \
+	java/com/craftinginterpreters/lox
+	
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-21 12:21:28
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+debug:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 62):
+	@ $(MAKE) -f util/c.make NAME=cloxd MODE=debug SOURCE_DIR=c
+	
+
+split_chapters:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 196):
+	@ dart tool/bin/split_chapters.dart
+	
+
+# Not a target:
+tool/bin/test.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+tool/lib/src/markdown/xml_renderer.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+test: debug jlox build/test.dart.snapshot
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 32):
+	@- dart $(TEST_SNAPSHOT) clox
+	@ dart $(TEST_SNAPSHOT) jlox
+	
+
+# Not a target:
+tool/lib/src/code_tag.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+tool/lib/src/format.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+tool/lib/src/mustache.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/test.dart.snapshot: tool/pubspec.lock tool/bin/tile_pages.dart tool/bin/split_chapters.dart tool/bin/build.dart tool/bin/benchmark.dart tool/bin/test.dart tool/bin/compile_snippets.dart tool/bin/build_xml.dart tool/lib/src/split_chapter.dart tool/lib/src/mustache.dart tool/lib/src/source_file_parser.dart tool/lib/src/format.dart tool/lib/src/text.dart tool/lib/src/page.dart tool/lib/src/markdown/inline_syntax.dart tool/lib/src/markdown/xml_renderer.dart tool/lib/src/markdown/markdown.dart tool/lib/src/markdown/block_syntax.dart tool/lib/src/markdown/html_renderer.dart tool/lib/src/markdown/code_syntax.dart tool/lib/src/code_tag.dart tool/lib/src/book.dart tool/lib/src/location.dart tool/lib/src/page_parser.dart tool/lib/src/snippet.dart tool/lib/src/syntax/grammar.dart tool/lib/src/syntax/highlighter.dart tool/lib/src/syntax/rule.dart tool/lib/src/syntax/language.dart tool/lib/src/term.dart
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 56):
+ 
+	@ mkdir -p build
+	@ echo "Compiling Dart snapshot..."
+	@ dart --snapshot=$@ --snapshot-kind=app-jit tool/bin/test.dart clox >/dev/null
+	
+
+# Not a target:
+tool/lib/src/syntax/rule.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+tool/lib/src/syntax/grammar.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+tool/lib/src/source_file_parser.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+default: book clox jlox
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+tool/lib/src/page_parser.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+tool/lib/src/book.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+test_all: debug jlox c_chapters java_chapters compile_snippets build/test.dart.snapshot
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 53):
+	@ dart $(TEST_SNAPSHOT) all
+	
+
+# Not a target:
+tool/lib/src/syntax/highlighter.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+compile_snippets:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 199):
+	@ dart tool/bin/compile_snippets.dart
+	
+
+# Not a target:
+tool/bin/build_xml.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+c_chapters: split_chapters
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 127):
+	@ $(MAKE) -f util/c.make NAME=chap14_chunks MODE=release SOURCE_DIR=gen/chap14_chunks
+	@ $(MAKE) -f util/c.make NAME=chap15_virtual MODE=release SOURCE_DIR=gen/chap15_virtual
+	@ $(MAKE) -f util/c.make NAME=chap16_scanning MODE=release SOURCE_DIR=gen/chap16_scanning
+	@ $(MAKE) -f util/c.make NAME=chap17_compiling MODE=release SOURCE_DIR=gen/chap17_compiling
+	@ $(MAKE) -f util/c.make NAME=chap18_types MODE=release SOURCE_DIR=gen/chap18_types
+	@ $(MAKE) -f util/c.make NAME=chap19_strings MODE=release SOURCE_DIR=gen/chap19_strings
+	@ $(MAKE) -f util/c.make NAME=chap20_hash MODE=release SOURCE_DIR=gen/chap20_hash
+	@ $(MAKE) -f util/c.make NAME=chap21_global MODE=release SOURCE_DIR=gen/chap21_global
+	@ $(MAKE) -f util/c.make NAME=chap22_local MODE=release SOURCE_DIR=gen/chap22_local
+	@ $(MAKE) -f util/c.make NAME=chap23_jumping MODE=release SOURCE_DIR=gen/chap23_jumping
+	@ $(MAKE) -f util/c.make NAME=chap24_calls MODE=release SOURCE_DIR=gen/chap24_calls
+	@ $(MAKE) -f util/c.make NAME=chap25_closures MODE=release SOURCE_DIR=gen/chap25_closures
+	@ $(MAKE) -f util/c.make NAME=chap26_garbage MODE=release SOURCE_DIR=gen/chap26_garbage
+	@ $(MAKE) -f util/c.make NAME=chap27_classes MODE=release SOURCE_DIR=gen/chap27_classes
+	@ $(MAKE) -f util/c.make NAME=chap28_methods MODE=release SOURCE_DIR=gen/chap28_methods
+	@ $(MAKE) -f util/c.make NAME=chap29_superclasses MODE=release SOURCE_DIR=gen/chap29_superclasses
+	@ $(MAKE) -f util/c.make NAME=chap30_optimization MODE=release SOURCE_DIR=gen/chap30_optimization
+	
+
+# Not a target:
+tool/lib/src/markdown/markdown.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+xml: tool/pubspec.lock tool/bin/tile_pages.dart tool/bin/split_chapters.dart tool/bin/build.dart tool/bin/benchmark.dart tool/bin/test.dart tool/bin/compile_snippets.dart tool/bin/build_xml.dart tool/lib/src/split_chapter.dart tool/lib/src/mustache.dart tool/lib/src/source_file_parser.dart tool/lib/src/format.dart tool/lib/src/text.dart tool/lib/src/page.dart tool/lib/src/markdown/inline_syntax.dart tool/lib/src/markdown/xml_renderer.dart tool/lib/src/markdown/markdown.dart tool/lib/src/markdown/block_syntax.dart tool/lib/src/markdown/html_renderer.dart tool/lib/src/markdown/code_syntax.dart tool/lib/src/code_tag.dart tool/lib/src/book.dart tool/lib/src/location.dart tool/lib/src/page_parser.dart tool/lib/src/snippet.dart tool/lib/src/syntax/grammar.dart tool/lib/src/syntax/highlighter.dart tool/lib/src/syntax/rule.dart tool/lib/src/syntax/language.dart tool/lib/src/term.dart
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 203):
+	@ dart --enable-asserts tool/bin/build_xml.dart
+	
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 14):
+	@ rm -rf $(BUILD_DIR)
+	@ rm -rf gen
+	
+
+# Not a target:
+tool/lib/src/markdown/inline_syntax.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+cpp_chapters: split_chapters
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 146):
+	@ $(MAKE) -f util/c.make NAME=cpp_chap14_chunks MODE=release CPP=true SOURCE_DIR=gen/chap14_chunks
+	@ $(MAKE) -f util/c.make NAME=cpp_chap15_virtual MODE=release CPP=true SOURCE_DIR=gen/chap15_virtual
+	@ $(MAKE) -f util/c.make NAME=cpp_chap16_scanning MODE=release CPP=true SOURCE_DIR=gen/chap16_scanning
+	@ $(MAKE) -f util/c.make NAME=cpp_chap17_compiling MODE=release CPP=true SOURCE_DIR=gen/chap17_compiling
+	@ $(MAKE) -f util/c.make NAME=cpp_chap18_types MODE=release CPP=true SOURCE_DIR=gen/chap18_types
+	@ $(MAKE) -f util/c.make NAME=cpp_chap19_strings MODE=release CPP=true SOURCE_DIR=gen/chap19_strings
+	@ $(MAKE) -f util/c.make NAME=cpp_chap20_hash MODE=release CPP=true SOURCE_DIR=gen/chap20_hash
+	@ $(MAKE) -f util/c.make NAME=cpp_chap21_global MODE=release CPP=true SOURCE_DIR=gen/chap21_global
+	@ $(MAKE) -f util/c.make NAME=cpp_chap22_local MODE=release CPP=true SOURCE_DIR=gen/chap22_local
+	@ $(MAKE) -f util/c.make NAME=cpp_chap23_jumping MODE=release CPP=true SOURCE_DIR=gen/chap23_jumping
+	@ $(MAKE) -f util/c.make NAME=cpp_chap24_calls MODE=release CPP=true SOURCE_DIR=gen/chap24_calls
+	@ $(MAKE) -f util/c.make NAME=cpp_chap25_closures MODE=release CPP=true SOURCE_DIR=gen/chap25_closures
+	@ $(MAKE) -f util/c.make NAME=cpp_chap26_garbage MODE=release CPP=true SOURCE_DIR=gen/chap26_garbage
+	@ $(MAKE) -f util/c.make NAME=cpp_chap27_classes MODE=release CPP=true SOURCE_DIR=gen/chap27_classes
+	@ $(MAKE) -f util/c.make NAME=cpp_chap28_methods MODE=release CPP=true SOURCE_DIR=gen/chap28_methods
+	@ $(MAKE) -f util/c.make NAME=cpp_chap29_superclasses MODE=release CPP=true SOURCE_DIR=gen/chap29_superclasses
+	@ $(MAKE) -f util/c.make NAME=cpp_chap30_optimization MODE=release CPP=true SOURCE_DIR=gen/chap30_optimization
+	
+
+# Not a target:
+tool/lib/src/text.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+tool/bin/build.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+test_java: jlox java_chapters build/test.dart.snapshot
+#  Phony target (prerequisite of .PHONY).
+ 
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 49):
+	@ dart $(TEST_SNAPSHOT) java
+	
+
+# Not a target:
+tool/bin/benchmark.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+test_clox: debug build/test.dart.snapshot
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 37):
+	@ dart $(TEST_SNAPSHOT) clox
+	
+
+diffs: split_chapters java_chapters
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 165):
+	@ mkdir -p build/diffs
+	@ -diff --recursive --new-file nonexistent/ gen/chap04_scanning/com/craftinginterpreters/ > build/diffs/chap04_scanning.diff
+	@ -diff --recursive --new-file gen/chap04_scanning/com/craftinginterpreters/ gen/chap05_representing/com/craftinginterpreters/ > build/diffs/chap05_representing.diff
+	@ -diff --recursive --new-file gen/chap05_representing/com/craftinginterpreters/ gen/chap06_parsing/com/craftinginterpreters/ > build/diffs/chap06_parsing.diff
+	@ -diff --recursive --new-file gen/chap06_parsing/com/craftinginterpreters/ gen/chap07_evaluating/com/craftinginterpreters/ > build/diffs/chap07_evaluating.diff
+	@ -diff --recursive --new-file gen/chap07_evaluating/com/craftinginterpreters/ gen/chap08_statements/com/craftinginterpreters/ > build/diffs/chap08_statements.diff
+	@ -diff --recursive --new-file gen/chap08_statements/com/craftinginterpreters/ gen/chap09_control/com/craftinginterpreters/ > build/diffs/chap09_control.diff
+	@ -diff --recursive --new-file gen/chap09_control/com/craftinginterpreters/ gen/chap10_functions/com/craftinginterpreters/ > build/diffs/chap10_functions.diff
+	@ -diff --recursive --new-file gen/chap10_functions/com/craftinginterpreters/ gen/chap11_resolving/com/craftinginterpreters/ > build/diffs/chap11_resolving.diff
+	@ -diff --recursive --new-file gen/chap11_resolving/com/craftinginterpreters/ gen/chap12_classes/com/craftinginterpreters/ > build/diffs/chap12_classes.diff
+	@ -diff --recursive --new-file gen/chap12_classes/com/craftinginterpreters/ gen/chap13_inheritance/com/craftinginterpreters/ > build/diffs/chap13_inheritance.diff
+	@ -diff --new-file nonexistent/ gen/chap14_chunks/ > build/diffs/chap14_chunks.diff
+	@ -diff --new-file gen/chap14_chunks/ gen/chap15_virtual/ > build/diffs/chap15_virtual.diff
+	@ -diff --new-file gen/chap15_virtual/ gen/chap16_scanning/ > build/diffs/chap16_scanning.diff
+	@ -diff --new-file gen/chap16_scanning/ gen/chap17_compiling/ > build/diffs/chap17_compiling.diff
+	@ -diff --new-file gen/chap17_compiling/ gen/chap18_types/ > build/diffs/chap18_types.diff
+	@ -diff --new-file gen/chap18_types/ gen/chap19_strings/ > build/diffs/chap19_strings.diff
+	@ -diff --new-file gen/chap19_strings/ gen/chap20_hash/ > build/diffs/chap20_hash.diff
+	@ -diff --new-file gen/chap20_hash/ gen/chap21_global/ > build/diffs/chap21_global.diff
+	@ -diff --new-file gen/chap21_global/ gen/chap22_local/ > build/diffs/chap22_local.diff
+	@ -diff --new-file gen/chap22_local/ gen/chap23_jumping/ > build/diffs/chap23_jumping.diff
+	@ -diff --new-file gen/chap23_jumping/ gen/chap24_calls/ > build/diffs/chap24_calls.diff
+	@ -diff --new-file gen/chap24_calls/ gen/chap25_closures/ > build/diffs/chap25_closures.diff
+	@ -diff --new-file gen/chap25_closures/ gen/chap26_garbage/ > build/diffs/chap26_garbage.diff
+	@ -diff --new-file gen/chap26_garbage/ gen/chap27_classes/ > build/diffs/chap27_classes.diff
+	@ -diff --new-file gen/chap27_classes/ gen/chap28_methods/ > build/diffs/chap28_methods.diff
+	@ -diff --new-file gen/chap28_methods/ gen/chap29_superclasses/ > build/diffs/chap29_superclasses.diff
+	@ -diff --new-file gen/chap29_superclasses/ gen/chap30_optimization/ > build/diffs/chap30_optimization.diff
+	
+
+clox:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 66):
+	@ $(MAKE) -f util/c.make NAME=clox MODE=release SOURCE_DIR=c
+	@ cp build/clox clox # For convenience, copy the interpreter to the top level.
+	
+
+# Not a target:
+tool/lib/src/location.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+serve: build/build.dart.snapshot
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 23):
+	@ dart $(BUILD_SNAPSHOT) --serve
+	
+
+get:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 10):
+	@ cd ./tool; dart pub get
+	
+
+# Not a target:
+tool/lib/src/page.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+tool/bin/tile_pages.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+tool/lib/src/markdown/block_syntax.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+tool/bin/split_chapters.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+tool/lib/src/markdown/html_renderer.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+tool/lib/src/snippet.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+tool/lib/src/split_chapter.dart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=60/1024=6%, Rehash=0, Collisions=19/209=9%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+
+# Finished Make data base on Mon Feb 21 12:23:58 2022
+
+ 

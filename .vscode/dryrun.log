@@ -1,0 +1,117 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/yuanjiewei/project/craftinginterpreters'
+mkdir -p build
+ 
+echo "Compiling Dart snapshot..."
+dart --snapshot=build/build.dart.snapshot --snapshot-kind=app-jit tool/bin/build.dart >/dev/null
+dart build/build.dart.snapshot
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f util/c.make NAME=clox MODE=release SOURCE_DIR=c
+make[1]: Entering directory `/Users/yuanjiewei/project/craftinginterpreters'
+printf "%8s %-40s %s\n" cc c/chunk.c "-std=c99 -Wall -Wextra -Werror -Wno-unused-parameter -O3 -flto"
+mkdir -p build/release/clox
+cc -c  -std=c99 -Wall -Wextra -Werror -Wno-unused-parameter -O3 -flto -o build/release/clox/chunk.o c/chunk.c
+printf "%8s %-40s %s\n" cc c/compiler.c "-std=c99 -Wall -Wextra -Werror -Wno-unused-parameter -O3 -flto"
+mkdir -p build/release/clox
+cc -c  -std=c99 -Wall -Wextra -Werror -Wno-unused-parameter -O3 -flto -o build/release/clox/compiler.o c/compiler.c
+printf "%8s %-40s %s\n" cc c/debug.c "-std=c99 -Wall -Wextra -Werror -Wno-unused-parameter -O3 -flto"
+mkdir -p build/release/clox
+cc -c  -std=c99 -Wall -Wextra -Werror -Wno-unused-parameter -O3 -flto -o build/release/clox/debug.o c/debug.c
+printf "%8s %-40s %s\n" cc c/main.c "-std=c99 -Wall -Wextra -Werror -Wno-unused-parameter -O3 -flto"
+mkdir -p build/release/clox
+cc -c  -std=c99 -Wall -Wextra -Werror -Wno-unused-parameter -O3 -flto -o build/release/clox/main.o c/main.c
+printf "%8s %-40s %s\n" cc c/memory.c "-std=c99 -Wall -Wextra -Werror -Wno-unused-parameter -O3 -flto"
+mkdir -p build/release/clox
+cc -c  -std=c99 -Wall -Wextra -Werror -Wno-unused-parameter -O3 -flto -o build/release/clox/memory.o c/memory.c
+printf "%8s %-40s %s\n" cc c/object.c "-std=c99 -Wall -Wextra -Werror -Wno-unused-parameter -O3 -flto"
+mkdir -p build/release/clox
+cc -c  -std=c99 -Wall -Wextra -Werror -Wno-unused-parameter -O3 -flto -o build/release/clox/object.o c/object.c
+printf "%8s %-40s %s\n" cc c/scanner.c "-std=c99 -Wall -Wextra -Werror -Wno-unused-parameter -O3 -flto"
+mkdir -p build/release/clox
+cc -c  -std=c99 -Wall -Wextra -Werror -Wno-unused-parameter -O3 -flto -o build/release/clox/scanner.o c/scanner.c
+printf "%8s %-40s %s\n" cc c/table.c "-std=c99 -Wall -Wextra -Werror -Wno-unused-parameter -O3 -flto"
+mkdir -p build/release/clox
+cc -c  -std=c99 -Wall -Wextra -Werror -Wno-unused-parameter -O3 -flto -o build/release/clox/table.o c/table.c
+printf "%8s %-40s %s\n" cc c/value.c "-std=c99 -Wall -Wextra -Werror -Wno-unused-parameter -O3 -flto"
+mkdir -p build/release/clox
+cc -c  -std=c99 -Wall -Wextra -Werror -Wno-unused-parameter -O3 -flto -o build/release/clox/value.o c/value.c
+printf "%8s %-40s %s\n" cc c/vm.c "-std=c99 -Wall -Wextra -Werror -Wno-unused-parameter -O3 -flto"
+mkdir -p build/release/clox
+cc -c  -std=c99 -Wall -Wextra -Werror -Wno-unused-parameter -O3 -flto -o build/release/clox/vm.o c/vm.c
+printf "%8s %-40s %s\n" cc build/clox "-std=c99 -Wall -Wextra -Werror -Wno-unused-parameter -O3 -flto"
+mkdir -p build
+cc -std=c99 -Wall -Wextra -Werror -Wno-unused-parameter -O3 -flto build/release/clox/chunk.o build/release/clox/compiler.o build/release/clox/debug.o build/release/clox/main.o build/release/clox/memory.o build/release/clox/object.o build/release/clox/scanner.o build/release/clox/table.o build/release/clox/value.o build/release/clox/vm.o -o build/clox
+make[1]: Leaving directory `/Users/yuanjiewei/project/craftinginterpreters'
+cp build/clox clox # For convenience, copy the interpreter to the top level.
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f util/java.make DIR=java PACKAGE=tool
+make[1]: Entering directory `/Users/yuanjiewei/project/craftinginterpreters'
+mkdir -p build/java
+javac -cp java -d build/java -Werror -implicit:none java/com/craftinginterpreters/tool/GenerateAst.java
+printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/tool/GenerateAst.java "-Werror"
+: # Don't show "Nothing to be done" output.
+make[1]: Leaving directory `/Users/yuanjiewei/project/craftinginterpreters'
+java -cp build/java com.craftinginterpreters.tool.GenerateAst \
+			java/com/craftinginterpreters/lox
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f util/java.make DIR=java PACKAGE=lox
+make[1]: Entering directory `/Users/yuanjiewei/project/craftinginterpreters'
+mkdir -p build/java
+javac -cp java -d build/java -Werror -implicit:none java/com/craftinginterpreters/lox/AstPrinter.java
+printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/AstPrinter.java "-Werror"
+ 
+mkdir -p build/java
+javac -cp java -d build/java -Werror -implicit:none java/com/craftinginterpreters/lox/Environment.java
+printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/Environment.java "-Werror"
+ 
+mkdir -p build/java
+javac -cp java -d build/java -Werror -implicit:none java/com/craftinginterpreters/lox/Expr.java
+printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/Expr.java "-Werror"
+mkdir -p build/java
+javac -cp java -d build/java -Werror -implicit:none java/com/craftinginterpreters/lox/Interpreter.java
+printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/Interpreter.java "-Werror"
+mkdir -p build/java
+javac -cp java -d build/java -Werror -implicit:none java/com/craftinginterpreters/lox/Lox.java
+printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/Lox.java "-Werror"
+mkdir -p build/java
+javac -cp java -d build/java -Werror -implicit:none java/com/craftinginterpreters/lox/LoxCallable.java
+printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/LoxCallable.java "-Werror"
+ 
+mkdir -p build/java
+javac -cp java -d build/java -Werror -implicit:none java/com/craftinginterpreters/lox/LoxClass.java
+printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/LoxClass.java "-Werror"
+ 
+mkdir -p build/java
+javac -cp java -d build/java -Werror -implicit:none java/com/craftinginterpreters/lox/LoxFunction.java
+printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/LoxFunction.java "-Werror"
+mkdir -p build/java
+javac -cp java -d build/java -Werror -implicit:none java/com/craftinginterpreters/lox/LoxInstance.java
+printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/LoxInstance.java "-Werror"
+mkdir -p build/java
+javac -cp java -d build/java -Werror -implicit:none java/com/craftinginterpreters/lox/Parser.java
+printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/Parser.java "-Werror"
+mkdir -p build/java
+javac -cp java -d build/java -Werror -implicit:none java/com/craftinginterpreters/lox/Resolver.java
+printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/Resolver.java "-Werror"
+ 
+mkdir -p build/java
+javac -cp java -d build/java -Werror -implicit:none java/com/craftinginterpreters/lox/Return.java
+printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/Return.java "-Werror"
+ 
+mkdir -p build/java
+javac -cp java -d build/java -Werror -implicit:none java/com/craftinginterpreters/lox/RuntimeError.java
+printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/RuntimeError.java "-Werror"
+mkdir -p build/java
+javac -cp java -d build/java -Werror -implicit:none java/com/craftinginterpreters/lox/Scanner.java
+printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/Scanner.java "-Werror"
+mkdir -p build/java
+javac -cp java -d build/java -Werror -implicit:none java/com/craftinginterpreters/lox/Stmt.java
+printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/Stmt.java "-Werror"
+mkdir -p build/java
+javac -cp java -d build/java -Werror -implicit:none java/com/craftinginterpreters/lox/Token.java
+printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/Token.java "-Werror"
+mkdir -p build/java
+javac -cp java -d build/java -Werror -implicit:none java/com/craftinginterpreters/lox/TokenType.java
+printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/TokenType.java "-Werror"
+: # Don't show "Nothing to be done" output.
+make[1]: Leaving directory `/Users/yuanjiewei/project/craftinginterpreters'
+ 
+make: Leaving directory `/Users/yuanjiewei/project/craftinginterpreters'
+ 
