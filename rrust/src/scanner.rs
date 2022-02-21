@@ -1,6 +1,8 @@
 use crate::token::Literal;
 use crate::token::Token::{self, *};
 use crate::utils::*;
+use lazy_static::lazy_static;
+use std::collections::HashMap;
 pub struct Scanner {
     cur: usize,
     start: usize,
@@ -8,6 +10,29 @@ pub struct Scanner {
     line: usize,
     tokens: Vec<Token>,
 }
+
+lazy_static! {
+    static ref keywords: HashMap<&'static str, &'static Token> = {
+        let mut map = HashMap::new();
+        map.insert("and", And);
+        map.insert("class", Class);
+        map.insert("else", Else);
+        map.insert("false", False);
+        map.insert("for", For);
+        map.insert("fun", Fun);
+        map.insert("if", If);
+        map.insert("nil", Nil);
+        map.insert("or", Or);
+        map.insert("print", Print);
+        map.insert("return", Return);
+        map.insert("super", Super);
+        map.insert("this", This);
+        map.insert("true", True);
+        map.insert("var", Var);
+        map.insert("while", While);
+    };
+}
+
 impl Scanner {
     pub fn scan_tokens(&self, line: &String) -> Vec<Token> {
         while !self.is_end() {
@@ -98,22 +123,41 @@ impl Scanner {
         // "1"a
         // closed '"'
         self.advance();
-        let value = self
-            .src
-            .chars()
-            .skip(self.start + 1)
-            .take(self.cur - self.start - 2)
-            .collect();
+        let value = self.src.sub_str(self.start + 1, self.cur - self.start - 2);
         self.add_token(Str(Literal::Str(value)));
     }
     fn number(&self) {
-        let mut s: String = String::new();
         while !self.is_end() && is_alpha(self.peek()) {
-            s.push(self.peek());
+            self.advance();
         }
-        self.advance();
+        if self.peek() == '.' && is_digit(self.peek_next()) {
+            self.advance();
+        }
+        // float
+        while is_digit(self.advance()) {
+            self.advance();
+        }
+        let value = self
+            .src
+            .sub_str(self.start, self.cur - self.start)
+            .parse::<f64>();
+        match value {
+            Ok(val) => self.add_token(Number(Literal::Double(val))),
+            Err(_) => {
+                panic!(format!(format!(
+                    "fail to parse {} to f64",
+                    self.src.sub_str(self.start + 1, self.cur - self.start - 2)
+                )));
+            }
+        }
     }
-    fn identifier(&self) {}
+    fn identifier(&self) {
+        while is_alpha(self.peek()) {
+            self.advance();
+        }
+        String text = self.src.sub_str(self.start,self.cur);
+        keywords.
+    }
     fn is_end(&self) -> bool {
         return self.cur >= self.tokens.len();
     }
@@ -131,5 +175,10 @@ impl Scanner {
     fn add_token(&self, token: Token) {
         self.tokens.push(token);
     }
-    fn peek_next(&self) -> char {}
+    fn peek_next(&self) -> char {
+        if self.cur + 1 >= self.src.len() {
+            return '\0';
+        }
+        return self.src.chars().nth(self.cur + 1).unwrap();
+    }
 }
