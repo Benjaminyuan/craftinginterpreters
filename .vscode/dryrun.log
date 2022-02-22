@@ -1,7 +1,6 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/yuanjiewei/project/craftinginterpreters'
 mkdir -p build
- 
 echo "Compiling Dart snapshot..."
 dart --snapshot=build/build.dart.snapshot --snapshot-kind=app-jit tool/bin/build.dart >/dev/null
 dart build/build.dart.snapshot
@@ -56,11 +55,9 @@ make[1]: Entering directory `/Users/yuanjiewei/project/craftinginterpreters'
 mkdir -p build/java
 javac -cp java -d build/java -Werror -implicit:none java/com/craftinginterpreters/lox/AstPrinter.java
 printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/AstPrinter.java "-Werror"
- 
 mkdir -p build/java
 javac -cp java -d build/java -Werror -implicit:none java/com/craftinginterpreters/lox/Environment.java
 printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/Environment.java "-Werror"
- 
 mkdir -p build/java
 javac -cp java -d build/java -Werror -implicit:none java/com/craftinginterpreters/lox/Expr.java
 printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/Expr.java "-Werror"
@@ -73,11 +70,9 @@ printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/Lox.java "-Werro
 mkdir -p build/java
 javac -cp java -d build/java -Werror -implicit:none java/com/craftinginterpreters/lox/LoxCallable.java
 printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/LoxCallable.java "-Werror"
- 
 mkdir -p build/java
 javac -cp java -d build/java -Werror -implicit:none java/com/craftinginterpreters/lox/LoxClass.java
 printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/LoxClass.java "-Werror"
- 
 mkdir -p build/java
 javac -cp java -d build/java -Werror -implicit:none java/com/craftinginterpreters/lox/LoxFunction.java
 printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/LoxFunction.java "-Werror"
@@ -90,11 +85,9 @@ printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/Parser.java "-We
 mkdir -p build/java
 javac -cp java -d build/java -Werror -implicit:none java/com/craftinginterpreters/lox/Resolver.java
 printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/Resolver.java "-Werror"
- 
 mkdir -p build/java
 javac -cp java -d build/java -Werror -implicit:none java/com/craftinginterpreters/lox/Return.java
 printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/Return.java "-Werror"
- 
 mkdir -p build/java
 javac -cp java -d build/java -Werror -implicit:none java/com/craftinginterpreters/lox/RuntimeError.java
 printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/RuntimeError.java "-Werror"
@@ -112,6 +105,5 @@ javac -cp java -d build/java -Werror -implicit:none java/com/craftinginterpreter
 printf "%8s %-60s %s\n" javac java/com/craftinginterpreters/lox/TokenType.java "-Werror"
 : # Don't show "Nothing to be done" output.
 make[1]: Leaving directory `/Users/yuanjiewei/project/craftinginterpreters'
- 
 make: Leaving directory `/Users/yuanjiewei/project/craftinginterpreters'
  

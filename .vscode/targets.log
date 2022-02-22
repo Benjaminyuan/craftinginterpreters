@@ -10,19 +10,16 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
  
 
-# Make data base, printed on Mon Feb 21 12:23:58 2022
+# Make data base, printed on Tue Feb 22 12:48:12 2022
 
 # Variables
 
 # environment
 DART_PATH = /usr/local/opt/dart/libexec
 # automatic
- 
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
-# environment
-ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
 VSCODE_LOG_NATIVE = false
 # automatic
@@ -44,7 +41,7 @@ _ = /usr/bin/make
 # makefile (from `Makefile', line 4)
 TEST_SNAPSHOT := build/test.dart.snapshot
 # environment
-STARSHIP_SESSION_KEY = 2142313509129982
+STARSHIP_SESSION_KEY = 6965577170632584
 # environment
 AUTOJUMP_SOURCED = 1
 # environment
@@ -52,13 +49,11 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/l_/vl1b4klj0pvcpc924tgc0tpr0000gn/T/vscode-ipc-4a82a510-e53b-4f23-a7d4-86dc21b98430.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/l_/vl1b4klj0pvcpc924tgc0tpr0000gn/T/vscode-ipc-9bfe744b-5109-4e01-938c-53066006ff56.sock
 # environment
-VSCODE_CWD = /Users/yuanjiewei/project/craftinginterpreters
+VSCODE_CWD = /
 # environment
 PATH = /Users/yuanjiewei/.autojump/bin:/usr/local/opt/openjdk@11/bin:/usr/local/opt/python@3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/yuanjiewei/.cargo/bin:/Users/yuanjiewei/go/bin:/usr/local/go/bin:/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/bin:/Users/yuanjiewei/webdriver/bin:/usr/local/opt/dart/libexec/bin
-# environment
-GOROOT = /usr/local/go
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
@@ -102,8 +97,6 @@ HOME = /Users/yuanjiewei
 # default
 MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
-VSCODE_CLI = 1
-# environment
 VSCODE_CODE_CACHE_PATH = /Users/yuanjiewei/Library/Application Support/Code/CachedData/f80445acd5a3dadef24aa209168452a3d97cc326
 # environment
 LOGNAME = yuanjiewei
@@ -119,14 +112,12 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 XPC_FLAGS = 0x0
 # environment
 SDKMAN_VERSION = 5.13.1
-# environment
-COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
 # environment
-LC_TERMINAL = iTerm2
-# environment
-SHLVL = 3
+SHLVL = 1
 # environment
 JAVA_HOME = /Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home
 # makefile (from `Makefile', line 1)
@@ -139,19 +130,14 @@ USER = yuanjiewei
 .DEFAULT_GOAL := default
 # environment
 OPENSSL_INCLUDE_DIR = /usr/local/opt/openssl/include/
-# default
-MAKECMDGOALS := all
 # environment
-TERM_SESSION_ID = w0t0p0:91521867-B4BC-4C6F-BD5A-98D1865FDBBD
+GOROOT = /usr/local/go
 # environment
 LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
 MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
- 
-# environment
-TERM_PROGRAM = iTerm.app
 # default
 .VARIABLES := 
 # environment
@@ -169,19 +155,11 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-TERM_PROGRAM_VERSION = 3.4.15
-# environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.154695037.154695046.9E9FE426-471B-4E48-BD57-E71DC33C8081
-# environment
-LC_TERMINAL_VERSION = 3.4.15
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.154695037.154695046
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
-# environment
-ITERM_SESSION_ID = w0t0p0:91521867-B4BC-4C6F-BD5A-98D1865FDBBD
-# environment
-COLORFGBG = 7;0
 # environment
 __CF_USER_TEXT_ENCODING = 0x1F5:0x19:0x34
 # environment
@@ -190,8 +168,6 @@ COMMAND_MODE = unix2003
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
-# environment
-ITERM_PROFILE = Default
 # environment
 SDKMAN_CANDIDATES_DIR = /Users/yuanjiewei/.sdkman/candidates
 # environment
@@ -219,13 +195,11 @@ AUTOJUMP_ERROR_PATH = /Users/yuanjiewei/Library/autojump/errors.log
 # environment
 LANG = C
 # environment
-TERM = xterm-256color
-# environment
 VSCODE_PID = 578
 # environment
 STARSHIP_SHELL = zsh
 # variable set hash-table stats:
-# Load=104/1024=10%, Rehash=0, Collisions=8/145=6%
+# Load=92/1024=9%, Rehash=0, Collisions=4/133=3%
 
 # Pattern-specific Variable Values
 
@@ -271,6 +245,7 @@ java_chapters: split_chapters
 	@ $(MAKE) -f util/java.make DIR=gen/chap06_parsing PACKAGE=tool
 	$(call run_generate_ast,chap06_parsing)
 	@ $(MAKE) -f util/java.make DIR=gen/chap06_parsing PACKAGE=lox
+ 
 	@ $(MAKE) -f util/java.make DIR=gen/chap07_evaluating PACKAGE=tool
 	$(call run_generate_ast,chap07_evaluating)
 	@ $(MAKE) -f util/java.make DIR=gen/chap07_evaluating PACKAGE=lox
@@ -312,7 +287,6 @@ test_jlox: jlox build/test.dart.snapshot
 
 build/build.dart.snapshot: tool/pubspec.lock tool/bin/tile_pages.dart tool/bin/split_chapters.dart tool/bin/build.dart tool/bin/benchmark.dart tool/bin/test.dart tool/bin/compile_snippets.dart tool/bin/build_xml.dart tool/lib/src/split_chapter.dart tool/lib/src/mustache.dart tool/lib/src/source_file_parser.dart tool/lib/src/format.dart tool/lib/src/text.dart tool/lib/src/page.dart tool/lib/src/markdown/inline_syntax.dart tool/lib/src/markdown/xml_renderer.dart tool/lib/src/markdown/markdown.dart tool/lib/src/markdown/block_syntax.dart tool/lib/src/markdown/html_renderer.dart tool/lib/src/markdown/code_syntax.dart tool/lib/src/code_tag.dart tool/lib/src/book.dart tool/lib/src/location.dart tool/lib/src/page_parser.dart tool/lib/src/snippet.dart tool/lib/src/syntax/grammar.dart tool/lib/src/syntax/highlighter.dart tool/lib/src/syntax/rule.dart tool/lib/src/syntax/language.dart tool/lib/src/term.dart
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 26):
@@ -465,7 +439,6 @@ build/test.dart.snapshot: tool/pubspec.lock tool/bin/tile_pages.dart tool/bin/sp
 #  Modification time never checked.
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 56):
- 
 	@ mkdir -p build
 	@ echo "Compiling Dart snapshot..."
 	@ dart --snapshot=$@ --snapshot-kind=app-jit tool/bin/test.dart clox >/dev/null
@@ -478,6 +451,7 @@ tool/lib/src/syntax/rule.dart:
 #  File has not been updated.
 
 # Not a target:
+ 
 tool/lib/src/syntax/grammar.dart:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -636,7 +610,6 @@ tool/bin/build.dart:
 
 test_java: jlox java_chapters build/test.dart.snapshot
 #  Phony target (prerequisite of .PHONY).
- 
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
@@ -660,6 +633,7 @@ test_clox: debug build/test.dart.snapshot
 
 diffs: split_chapters java_chapters
 #  Phony target (prerequisite of .PHONY).
+ 
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
@@ -783,6 +757,6 @@ tool/lib/src/split_chapter.dart:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon Feb 21 12:23:58 2022
+# Finished Make data base on Tue Feb 22 12:48:12 2022
 
  

@@ -1,8 +1,7 @@
 use crate::token::Literal;
 use crate::token::Token::{self, *};
 use crate::utils::*;
-use lazy_static::lazy_static;
-use std::collections::HashMap;
+
 pub struct Scanner {
     cur: usize,
     start: usize,
@@ -10,38 +9,44 @@ pub struct Scanner {
     line: usize,
     tokens: Vec<Token>,
 }
+use phf::phf_map;
 
-lazy_static! {
-    static ref keywords: HashMap<&'static str, &'static Token> = {
-        let mut map = HashMap::new();
-        map.insert("and", And);
-        map.insert("class", Class);
-        map.insert("else", Else);
-        map.insert("false", False);
-        map.insert("for", For);
-        map.insert("fun", Fun);
-        map.insert("if", If);
-        map.insert("nil", Nil);
-        map.insert("or", Or);
-        map.insert("print", Print);
-        map.insert("return", Return);
-        map.insert("super", Super);
-        map.insert("this", This);
-        map.insert("true", True);
-        map.insert("var", Var);
-        map.insert("while", While);
-    };
-}
-
+static keywords: phf::Map<&'static str, &'static Token> = phf_map! {
+        "and" =>  &And,
+        "class"=>  &Class,
+        "else"=>  &Else,
+        "false"=>  &False,
+        "for"=>  &For,
+        "fun"=>  &Fun,
+        "if"=>  &If,
+        "nil"=>  &Nil,
+        "or"=>  &Or,
+        "print"=>  &Print,
+        "return"=>  &Return,
+        "super"=>  &Super,
+        "this"=>  &This,
+        "true"=>  &True,
+        "var"=>  &Var,
+        "while"=>  &While,
+};
 impl Scanner {
-    pub fn scan_tokens(&self, line: &String) -> Vec<Token> {
+    pub fn new(src_str: String) -> Self {
+        Scanner {
+            cur: 0,
+            start: 0,
+            line: 0,
+            src: src_str,
+            tokens: Vec::new(),
+        }
+    }
+    pub fn scan_tokens(&mut self) -> Vec<Token> {
         while !self.is_end() {
             self.start = self.cur;
             self.scan_token();
         }
         return std::mem::replace(&mut self.tokens, Vec::new());
     }
-    pub fn scan_token(&self) {
+    pub fn scan_token(&mut self) {
         let c = self.advance();
         match c {
             '(' => self.add_token(LeftParen),
@@ -108,7 +113,7 @@ impl Scanner {
             }
         }
     }
-    fn string(&self) {
+    fn string(&mut self) {
         let mut s: String = String::new();
         while !self.is_end() && !self.is_match('"') {
             // 换行
@@ -126,7 +131,7 @@ impl Scanner {
         let value = self.src.sub_str(self.start + 1, self.cur - self.start - 2);
         self.add_token(Str(Literal::Str(value)));
     }
-    fn number(&self) {
+    fn number(&mut self) {
         while !self.is_end() && is_alpha(self.peek()) {
             self.advance();
         }
@@ -144,24 +149,25 @@ impl Scanner {
         match value {
             Ok(val) => self.add_token(Number(Literal::Double(val))),
             Err(_) => {
-                panic!(format!(format!(
+                panic!(format!(
                     "fail to parse {} to f64",
                     self.src.sub_str(self.start + 1, self.cur - self.start - 2)
-                )));
+                ));
             }
         }
     }
-    fn identifier(&self) {
+    fn identifier(&mut self) {
         while is_alpha(self.peek()) {
             self.advance();
         }
-        String text = self.src.sub_str(self.start,self.cur);
-        keywords.
+        let text = self.src.sub_str(self.start, self.cur);
+        let t: &Token = keywords[text];
+        
     }
-    fn is_end(&self) -> bool {
+    fn is_end(&mut self) -> bool {
         return self.cur >= self.tokens.len();
     }
-    fn advance(&self) -> char {
+    fn advance(&mut self) -> char {
         let c = self.src.chars().nth(self.cur).unwrap();
         self.cur += 1;
         return c;
@@ -172,7 +178,7 @@ impl Scanner {
     fn is_match(&self, c: char) -> bool {
         return c == self.peek();
     }
-    fn add_token(&self, token: Token) {
+    fn add_token(&mut self, token: Token) {
         self.tokens.push(token);
     }
     fn peek_next(&self) -> char {

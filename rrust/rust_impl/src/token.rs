@@ -1,6 +1,4 @@
 pub enum Token {
-    Lr,
-    Rr,
     LeftParen,
     RightParen,
     LeftBrace,
@@ -22,7 +20,23 @@ pub enum Token {
     Slash,
     Str(Literal),
     Number(Literal),
-    Identifier
+    Identifier,
+    And,
+    Class,
+    Else,
+    False,
+    For,
+    Fun,
+    If,
+    Nil,
+    Or,
+    Print,
+    Return,
+    Super,
+    This,
+    True,
+    Var,
+    While,
 }
 pub enum Literal {
     Double(f64),
