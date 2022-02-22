@@ -1,3 +1,4 @@
+#[derive(Clone, Debug)]
 pub enum Token {
     LeftParen,
     RightParen,
@@ -20,7 +21,7 @@ pub enum Token {
     Slash,
     Str(Literal),
     Number(Literal),
-    Identifier,
+    Identifier(Literal),
     And,
     Class,
     Else,
@@ -38,8 +39,8 @@ pub enum Token {
     Var,
     While,
 }
+#[derive(Clone, Debug)]
 pub enum Literal {
     Double(f64),
     Str(String),
-    Int(i32),
 }

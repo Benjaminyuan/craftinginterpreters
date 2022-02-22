@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
  
 
-# Make data base, printed on Tue Feb 22 12:48:12 2022
+# Make data base, printed on Tue Feb 22 18:19:41 2022
 
 # Variables
 
@@ -49,7 +49,7 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/l_/vl1b4klj0pvcpc924tgc0tpr0000gn/T/vscode-ipc-9bfe744b-5109-4e01-938c-53066006ff56.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/l_/vl1b4klj0pvcpc924tgc0tpr0000gn/T/vscode-ipc-c25f19a8-176a-4292-8035-dd35c45379cb.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -757,6 +757,6 @@ tool/lib/src/split_chapter.dart:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue Feb 22 12:48:12 2022
+# Finished Make data base on Tue Feb 22 18:19:41 2022
 
  

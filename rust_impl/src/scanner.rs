@@ -11,23 +11,23 @@ pub struct Scanner {
 }
 use phf::phf_map;
 
-static keywords: phf::Map<&'static str, &'static Token> = phf_map! {
-        "and" =>  &And,
-        "class"=>  &Class,
-        "else"=>  &Else,
-        "false"=>  &False,
-        "for"=>  &For,
-        "fun"=>  &Fun,
-        "if"=>  &If,
-        "nil"=>  &Nil,
-        "or"=>  &Or,
-        "print"=>  &Print,
-        "return"=>  &Return,
-        "super"=>  &Super,
-        "this"=>  &This,
-        "true"=>  &True,
-        "var"=>  &Var,
-        "while"=>  &While,
+static KEYWORDS: phf::Map<&'static str, Token> = phf_map! {
+        "and" =>  And,
+        "class"=>  Class,
+        "else"=>  Else,
+        "false"=>  False,
+        "for"=>  For,
+        "fun"=>  Fun,
+        "if"=>  If,
+        "nil"=>  Nil,
+        "or"=>  Or,
+        "print"=>  Print,
+        "return"=>  Return,
+        "super"=>  Super,
+        "this"=>  This,
+        "true"=>  True,
+        "var"=>  Var,
+        "while"=>  While,
 };
 impl Scanner {
     pub fn new(src_str: String) -> Self {
@@ -40,6 +40,7 @@ impl Scanner {
         }
     }
     pub fn scan_tokens(&mut self) -> Vec<Token> {
+        println!("{},{:?}", self.src, self.is_end());
         while !self.is_end() {
             self.start = self.cur;
             self.scan_token();
@@ -48,6 +49,7 @@ impl Scanner {
     }
     pub fn scan_token(&mut self) {
         let c = self.advance();
+        println!("cur char: {}", c);
         match c {
             '(' => self.add_token(LeftParen),
             ')' => self.add_token(RightParen),
@@ -97,7 +99,7 @@ impl Scanner {
                     self.add_token(Slash);
                 }
             }
-            ' ' | '\r' | '\t' | '\n' => {}
+            ' ' | '\r' | '\t' => {}
             '\n' => {
                 self.line += 1;
             }
@@ -114,7 +116,6 @@ impl Scanner {
         }
     }
     fn string(&mut self) {
-        let mut s: String = String::new();
         while !self.is_end() && !self.is_match('"') {
             // 换行
             if self.is_match('\n') {
@@ -123,7 +124,7 @@ impl Scanner {
             self.advance();
         }
         if self.is_end() {
-            panic!(format!("line: {} Unterminated string.", self.line));
+            panic!("line: {} Unterminated string.", self.line);
         }
         // "1"a
         // closed '"'
@@ -132,27 +133,28 @@ impl Scanner {
         self.add_token(Str(Literal::Str(value)));
     }
     fn number(&mut self) {
-        while !self.is_end() && is_alpha(self.peek()) {
+        while !self.is_end() && is_digit(self.peek()) {
             self.advance();
         }
         if self.peek() == '.' && is_digit(self.peek_next()) {
             self.advance();
         }
         // float
-        while is_digit(self.advance()) {
+        while is_digit(self.peek()) {
             self.advance();
         }
         let value = self
             .src
             .sub_str(self.start, self.cur - self.start)
             .parse::<f64>();
+        println!("number: {:?}", value);
         match value {
             Ok(val) => self.add_token(Number(Literal::Double(val))),
             Err(_) => {
-                panic!(format!(
+                panic!(
                     "fail to parse {} to f64",
                     self.src.sub_str(self.start + 1, self.cur - self.start - 2)
-                ));
+                );
             }
         }
     }
@@ -160,19 +162,27 @@ impl Scanner {
         while is_alpha(self.peek()) {
             self.advance();
         }
-        let text = self.src.sub_str(self.start, self.cur);
-        let t: &Token = keywords[text];
-        
+        let text: String = self.src.sub_str(self.start, self.cur);
+        match KEYWORDS.get(text.as_str()) {
+            Some(v) => self.add_token(v.clone()),
+            None => self.add_token(Identifier(Literal::Str(text))),
+        }
     }
-    fn is_end(&mut self) -> bool {
-        return self.cur >= self.tokens.len();
+    fn is_end(&self) -> bool {
+        return self.cur >= self.src.len();
     }
     fn advance(&mut self) -> char {
+        if self.is_end() {
+            return '\0';
+        }
         let c = self.src.chars().nth(self.cur).unwrap();
         self.cur += 1;
         return c;
     }
     fn peek(&self) -> char {
+        if self.is_end() {
+            return '\0';
+        }
         return self.src.chars().nth(self.cur).unwrap();
     }
     fn is_match(&self, c: char) -> bool {

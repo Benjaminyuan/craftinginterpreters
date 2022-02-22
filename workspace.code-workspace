@@ -4,10 +4,10 @@
 			"path": "."
 		},
 		{
-			"path": "rrust"
+			"path": "java"
 		},
 		{
-			"path": "java"
+			"path": "rust_impl"
 		}
 	],
 	"settings": {}
