@@ -10,5 +10,18 @@
 			"path": "rust_impl"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.associations": {
+			"vm.h": "c",
+			"atomic": "c",
+			"locale": "c",
+			"istream": "c",
+			"streambuf": "c",
+			"string.h": "c",
+			"stdlib.h": "c",
+			"stdbool.h": "c",
+			"stddef.h": "c",
+			"stdint.h": "c"
+		}
+	}
 }

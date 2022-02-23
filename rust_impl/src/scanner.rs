@@ -175,9 +175,8 @@ impl Scanner {
         if self.is_end() {
             return '\0';
         }
-        let c = self.src.chars().nth(self.cur).unwrap();
         self.cur += 1;
-        return c;
+        return self.src.chars().nth(self.cur - 1).unwrap();
     }
     fn peek(&self) -> char {
         if self.is_end() {
