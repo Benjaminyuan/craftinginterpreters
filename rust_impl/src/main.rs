@@ -1,6 +1,7 @@
 mod scanner;
 mod token;
 mod utils;
+mod statement;
 use scanner::Scanner;
 use std::env;
 use std::fs::File;

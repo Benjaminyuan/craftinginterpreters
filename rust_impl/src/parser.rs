@@ -1,7 +1,12 @@
+use statement::{self, *};
 use token::Token::{self, *};
 pub struct Parser {
     tokens: Vec<Token>,
     cur: i32,
+}
+#[derive(Debug)]
+enum Error {
+    ParseErr,
 }
 impl Parser {
     pub fn new(tokens: Vec<Token>) -> Self {
@@ -12,6 +17,32 @@ impl Parser {
     }
     pub fn peek(&self) -> &Token {
         &self.tokens[self.cur]
+    }
+    pub fn parse(&self) -> Vec<Stmt> {
+        let mut stmts: Vec<Stmt> = Vec::new();
+        while !self.is_end() {
+            stmts.push(self.declaration());
+        }
+        return stmts;
+    }
+    // todo: err handing 
+    fn declaration(&self) -> Stmt {
+        
+        if self.is_match(&[&Token::Class]) {
+            return self.classDeclaration()?;
+        } 
+        if self.is_match(&[&Token::Fun]) {
+            return self.funDeclaration()?;
+            
+        }
+        if self.is_match(&[&Token::Var]) {
+            return self.varDeclaration()?;
+        }
+        return self.statement()?;
+        
+    }
+    fn classDeclaration(&self) -> Result<Stmt,Error> {
+        return Ok()
     }
     pub fn is_match(&mut self, tokens: &[&Token]) -> bool {
         for t in tokens {
